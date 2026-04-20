@@ -86,6 +86,27 @@
                                 </tr>
                             </tbody>
                         </table>
+
+                        <label for="registrationType">Select registration type:</label>
+<select id="registrationType" onchange="openRegistrationPage()">
+  <option value="">-- Please choose an option --</option>
+  <option value="https://www.trippus.net/Student_Author_Participent">Student Author</option>
+  <option value="https://www.trippus.net/Regular_Author">Regular Author</option>
+  <option value="https://www.trippus.net/IFIP_Member">IFIP Member</option>
+  <option value="https://www.trippus.net/Student_non-author">Student (non-author)</option>
+  <option value="https://www.trippus.net/Other_Participants">Other Participants</option>
+</select>
+
+<script>
+  function openRegistrationPage() {
+    const dropdown = document.getElementById("registrationType");
+    const url = dropdown.value;
+    if (url) {
+      window.open(url, "_blank");
+      dropdown.selectedIndex = 0; // optional: reset after opening
+    }
+  }
+</script>
                         <h3>Terms of participation and paymanet</h3>
                         <p>Your registration and payment for participation is mandatory.</p>
                         <p>The conference programme is subject to change without notice.</p>
